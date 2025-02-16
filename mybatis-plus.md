@@ -5,10 +5,7 @@ tags:
   - mysql
   - mybatis
   - java
-categories:
-  - java
-cover: https://dogefs.s3.ladydaily.com/~/source/wallhaven/full/7p/wallhaven-7prg73.png?w=2560&h=1440&fmt=webp
-stick: 996
+categories: 后端
 ---
 
 # mybatis-plus
@@ -16,7 +13,6 @@ stick: 996
 ## 简介
 
 > [MyBatis-Plus](https://github.com/baomidou/mybatis-plus)（简称 MP）是一个 [MyBatis](https://www.mybatis.org/mybatis-3/)的增强工具，在 MyBatis 的基础上==只做增强不做改变==，为简化开发、提高效率而生。(先了解[[mybatis]]框架)
-
 
 ![](https://www.baomidou.com/img/relationship-with-mybatis.png)
 
@@ -38,7 +34,7 @@ stick: 996
 
 >为了简化单表CRUD，mp已经提供了对于单表的CRUD操作的接口`BaseMapper`,直接继承BaseMapper接口即可直接使用
 
-![](https://gitee.com/clibin/image-bed/raw/master/202309122231328.png)
+![](https://s2.loli.net/2024/09/27/4OLtKEZGCX8RBba.png)
 
 ### 1.3 测试CRUD
 
@@ -114,7 +110,7 @@ public class User {
 }
 ```
 
-### 2.2 [ @TableId](https://github.com/baomidou/mybatis-plus/blob/3.0/mybatis-plus-annotation/src/main/java/com/baomidou/mybatisplus/annotation/TableId.java)
+### 2.2 [@TableId](https://github.com/baomidou/mybatis-plus/blob/3.0/mybatis-plus-annotation/src/main/java/com/baomidou/mybatisplus/annotation/TableId.java)
 
 - 描述：主键注解
 - 使用位置：实体类主键字段
@@ -182,7 +178,7 @@ MybatisPlus也支持基于yaml文件的自定义配置，详见官方文档：
 
 ```yaml
 mybatis-plus:
-  type-aliases-package: com.itheima.mp.domain.po	#别名扫描包
+  type-aliases-package: com.itheima.mp.domain.po #别名扫描包
   global-config:
     db-config:
       id-type: auto # 全局id类型为自增长
@@ -219,16 +215,16 @@ public class App {
 ### 4.1 条件构造器
 
 除了新增以外，修改、删除、查询的SQL语句都需要指定where条件。因此BaseMapper中提供的相关方法除了以`id`作为`where`条件以外，还支持更加复杂的`where`条件。
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/27967491/1688117068580-3abcd2bb-fbf8-4430-8f2a-dcf130f05f70.png#averageHue=%23faf4ef&clientId=uea9a4aab-c071-4&from=paste&height=312&id=ua83b74d8&originHeight=387&originWidth=864&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=74950&status=done&style=none&taskId=uf547d320-6fa6-4d9c-a531-25573a538a5&title=&width=697.008381017849)
+![image.png](https://s2.loli.net/2024/09/27/RLOD7QvGzrIm6bX.png)
 参数中的`Wrapper`就是条件构造的抽象类，其下有很多默认实现，继承关系如图：
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/27967491/1688117775304-84915c47-d2d9-49f4-90fb-99270d9353c7.png#averageHue=%23f7faf2&clientId=uea9a4aab-c071-4&from=paste&height=407&id=uf66fc47c&originHeight=504&originWidth=1212&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=60824&status=done&style=none&taskId=u14c0b946-02c2-4631-bd09-d2459214134&title=&width=977.7478678167049)
+![image.png](https://s2.loli.net/2024/09/27/HZGgNMxK4R8PChQ.png)
 
 `Wrapper`的子类`AbstractWrapper`提供了where中包含的所有条件构造方法：
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/27967491/1688117979051-e388959d-86ba-4aa9-9d57-cd9fd84fc00f.png#averageHue=%23f9f8f6&clientId=uea9a4aab-c071-4&from=paste&height=651&id=ua30f8ba3&originHeight=807&originWidth=836&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=103972&status=done&style=none&taskId=u4c610b14-da63-46ae-8a13-08672c8643e&title=&width=674.4201464478261)
+![image.png](https://s2.loli.net/2024/09/27/tjv9SlikbZMu6GE.png)
 而QueryWrapper在AbstractWrapper的基础上拓展了一个select方法，允许指定查询字段：
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/27967491/1688118137162-ffcf1fe3-57cb-46ef-b069-9d576e9f0184.png#averageHue=%23e2c889&clientId=uea9a4aab-c071-4&from=paste&height=127&id=ue7075211&originHeight=158&originWidth=821&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=23389&status=done&style=none&taskId=ua0264d53-8522-4608-97e1-d30b91f878c&title=&width=662.3193064995996)
+![image.png](https://s2.loli.net/2024/09/27/wquGfEOJlzTtceP.png)
 而UpdateWrapper在AbstractWrapper的基础上拓展了一个set方法，允许指定SQL中的SET部分：
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/27967491/1688118200333-0c97025d-1bd9-4f3b-a486-7e6a1cf3604d.png#averageHue=%23e5ca91&clientId=uea9a4aab-c071-4&from=paste&height=126&id=uad24f810&originHeight=156&originWidth=825&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=22371&status=done&style=none&taskId=uacb8416a-d529-44e1-9a64-84c0ac60765&title=&width=665.54619715246)
+![image.png](https://s2.loli.net/2024/09/27/jQ6iLP7qJtka52N.png)
 
 接下来，我们就来看看如何利用`Wrapper`实现复杂查询。
 
@@ -277,7 +273,7 @@ void testUpdateWrapper() {
     UpdateWrapper<User> wrapper = new UpdateWrapper<User>()
             .setSql("balance = balance - 200") // SET balance = balance - 200
             .in("id", ids); // WHERE id in (1, 2, 4)
-	// 2.更新，注意第一个参数可以给null，也就是不填更新字段和数据，
+ // 2.更新，注意第一个参数可以给null，也就是不填更新字段和数据，
     // 而是基于UpdateWrapper中的setSQL来更新
     userMapper.update(null, wrapper);
 }
@@ -287,10 +283,10 @@ void testUpdateWrapper() {
 
 无论是QueryWrapper还是UpdateWrapper在构造条件的时候都需要写死字段名称，可能会出现字符串写错的现象，因此MybatisPlus又提供了一套基于Lambda的Wrapper，包含两个：
 
-- LambdaQueryWrapper
-- LambdaUpdateWrapper
+- `LambdaQueryWrapper`
+- `LambdaUpdateWrapper`
 
-分别对应QueryWrapper和UpdateWrapper
+分别对应`QueryWrapper`和`UpdateWrapper`
 
 ```mysql
 select id,username,info,balance 
@@ -319,8 +315,8 @@ UPDATE user SET balance = balance - 200 WHERE id in (1, 2, 4);
 
 #### 4.2.1 基本使用
 
-在演示UpdateWrapper的案例中，我们在代码中编写了更新的SQL语句：
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/27967491/1688133292238-a0f07be7-b115-4970-95d0-2f36bf68cc19.png#averageHue=%23f8fbf6&clientId=uea9a4aab-c071-4&from=paste&height=362&id=u502de218&originHeight=449&originWidth=1067&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=98085&status=done&style=none&taskId=u903bfb55-ce92-4788-af0e-33eeeabe260&title=&width=860.773081650515)
+在演示`UpdateWrapper`的案例中，我们在代码中编写了更新的SQL语句：
+![image.png](https://s2.loli.net/2024/09/27/GuIBkSFgNjRfm3X.png)
 这种写法在某些企业也是不允许的，因为SQL语句最好都维护在持久层，而不是业务层。就当前案例来说，由于条件是in语句，只能将SQL写在Mapper.xml文件，利用foreach来生成动态SQL。
 这实在是太麻烦了。假如查询条件更复杂，动态SQL的编写也会更加复杂。
 
@@ -338,7 +334,7 @@ UPDATE user SET balance = balance - 200 WHERE id in (1, 2, 4)
 void updateBalanceByWrapper(@Param("amount") int amount, @Param("ew") LambdaQueryWrapper<User> wrapper);
 ```
 
-`where id in(1,2,4)` 使用自定义sql完成,将wrapper作为参数传入自定义的方法中`${ew.customSqlSegment}` ==>` where id in (1,2,4)`
+`where id in(1,2,4)` 使用自定义sql完成,将wrapper作为参数传入自定义的方法中`${ew.customSqlSegment}` ==>`where id in (1,2,4)`
 
 ```java
     @Test
@@ -421,7 +417,7 @@ MybatisPlus不仅提供了BaseMapper，还提供了通用的Service接口及默�
 
 我们先俩看下基本的CRUD接口。
 **新增**：
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/27967491/1688175852334-462e40db-e880-4131-adaa-5fc14360ff73.png#averageHue=%23f9f8f5&clientId=u9097aa82-6411-4&from=paste&height=235&id=u06631bbd&originHeight=291&originWidth=890&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=35948&status=done&style=none&taskId=u045be908-a24b-4312-b024-0a2376b2e00&title=&width=717.9831702614417)
+![image.png](https://s2.loli.net/2024/09/27/IknQNGXRaDU2tHi.png)
 
 - `save`是新增单个元素
 - `saveBatch`是批量新增
@@ -429,7 +425,7 @@ MybatisPlus不仅提供了BaseMapper，还提供了通用的Service接口及默�
 - `saveOrUpdateBatch`是批量的新增或修改
 
 **删除：**
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/27967491/1688176052341-b6c0528d-bb35-452d-9087-ea5ee2708bd4.png#averageHue=%23f9f7f2&clientId=u9097aa82-6411-4&from=paste&height=330&id=u1802c257&originHeight=409&originWidth=913&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=55434&status=done&style=none&taskId=ubf745089-f151-433a-bf03-10a0e0907ce&title=&width=736.5377915153891)
+![image.png](https://s2.loli.net/2024/09/27/kWFEAZKwsGRBNjM.png)
 
 - `removeById`：根据id删除
 - `removeByIds`：根据id批量删除
@@ -438,7 +434,7 @@ MybatisPlus不仅提供了BaseMapper，还提供了通用的Service接口及默�
 - `~~removeBatchByIds~~`：暂不支持
 
 **修改：**
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/27967491/1688176292104-2d148912-019b-46c2-8537-54b9b1274abd.png#averageHue=%23faf6f2&clientId=u9097aa82-6411-4&from=paste&height=358&id=ub3a7a979&originHeight=444&originWidth=931&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=61438&status=done&style=none&taskId=u17eb7110-22a9-42b9-b021-bdef1484f11&title=&width=751.0587994532609)
+![image.png](https://s2.loli.net/2024/09/27/2qXOcJpWSxe65K7.png)
 
 - `updateById`：根据id修改
 - `update(Wrapper<T>)`：根据`UpdateWrapper`修改，`Wrapper`中包含`set`和`where`部分
@@ -446,34 +442,34 @@ MybatisPlus不仅提供了BaseMapper，还提供了通用的Service接口及默�
 - `updateBatchById`：根据id批量修改
 
 **Get：**
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/27967491/1688176734766-5df895e7-950a-4050-aa14-996ba9f6efc7.png#averageHue=%23f9f3f1&clientId=u9097aa82-6411-4&from=paste&height=232&id=uc50ce3bb&originHeight=287&originWidth=897&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=35993&status=done&style=none&taskId=u965dedf4-cadf-4370-be0b-1b4dfbae494&title=&width=723.6302289039475)
+![image.png](https://s2.loli.net/2024/09/27/gzd1a7KHYJshTkV.png)
 
 - `getById`：根据id查询1条数据
 - `getOne(Wrapper<T>)`：根据`Wrapper`查询1条数据
 - `getBaseMapper`：获取`Service`内的`BaseMapper`实现，某些时候需要直接调用`Mapper`内的自定义`SQL`时可以用这个方法获取到`Mapper`
 
 **List：**
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/27967491/1688176798210-d60284da-3862-422b-9621-2eec6b77c7ee.png#averageHue=%23f9f5f2&clientId=u9097aa82-6411-4&from=paste&height=303&id=udd4bc117&originHeight=375&originWidth=919&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=48612&status=done&style=none&taskId=uc743900e-ec3f-40c3-84b0-054169510ba&title=&width=741.3781274946797)
+![image.png](https://s2.loli.net/2024/09/27/QBxXbZCVWhoseDv.png)
 
 - `listByIds`：根据id批量查询
 - `list(Wrapper<T>)`：根据Wrapper条件查询多条数据
 - `list()`：查询所有
 
 **Count**：
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/27967491/1688176988135-5c605f58-87f5-42de-8613-ba3e7f7c36b4.png#averageHue=%23dbc789&clientId=u9097aa82-6411-4&from=paste&height=108&id=u366b7592&originHeight=134&originWidth=775&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=13537&status=done&style=none&taskId=u18328f20-d548-4a65-b93f-be7bbc9ca96&title=&width=625.2100639917048)
+![image.png](https://s2.loli.net/2024/09/27/7WnBx2T94zaCIrj.png)
 
 - `count()`：统计所有数量
 - `count(Wrapper<T>)`：统计符合`Wrapper`条件的数据数量
 
 **getBaseMapper**：
 当我们在service中要调用Mapper中自定义SQL时，就必须获取service对应的Mapper，就可以通过这个方法：
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/27967491/1689651515691-7a4ff31d-e73e-443e-a088-62af40589fa5.png#averageHue=%23f4f4f1&clientId=u82e37f7f-41b7-4&from=paste&height=111&id=ue40936a2&originHeight=124&originWidth=529&originalType=binary&ratio=1.115625023841858&rotation=0&showTitle=false&size=11331&status=done&style=none&taskId=u07515801-2ee5-4a97-9377-685cbb7dfbf&title=&width=474.17365933429153)
+![image.png](https://s2.loli.net/2024/09/27/lF9p4MbYmqLQUHd.png)
 
 #### 4.3.2 基本用法
 
 由于`Service`中经常需要定义与业务有关的自定义方法，因此我们不能直接使用`IService`，而是自定义`Service`接口，然后继承`IService`以拓展方法。同时，让自定义的`Service实现类`继承`ServiceImpl`，这样就不用自己实现`IService`中的接口了，如下图(**绿色为接口，蓝色为实现类**)
 
-![](https://gitee.com/clibin/image-bed/raw/master/202309131733746.png)
+![](https://s2.loli.net/2024/09/27/hG8ElYIcPVFDSOw.png)
 
 ```java
 //自定义接口继承IService接口，需要指定泛型
@@ -540,7 +536,7 @@ private User buildUser(int i) {
 ```
 
 执行结果如下：
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/27967491/1688182456300-08cbaea5-afd5-44e2-9e55-868595671548.png#averageHue=%23f6f8f4&clientId=u9097aa82-6411-4&from=paste&height=244&id=u1934bf0f&originHeight=303&originWidth=1525&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=107948&status=done&style=none&taskId=ua11c6515-de40-48dc-8d87-8a2dd7f255b&title=&width=1230.2520614030323)
+![image.png](https://s2.loli.net/2024/09/27/Q7NhDZuAwc4Mb9Y.png)
 可以看到速度非常慢。
 
 然后再试试MybatisPlus的批处理：
@@ -565,7 +561,7 @@ void testSaveBatch() {
 ```
 
 执行最终耗时如下：
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/27967491/1688182059553-db1fa9e1-3b14-47a3-be33-f7f0e7805cea.png#averageHue=%23f6f8f4&clientId=u9097aa82-6411-4&from=paste&height=246&id=udd2b6e84&originHeight=305&originWidth=1528&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=107606&status=done&style=none&taskId=ue141c82d-fd21-4e29-a2b5-284f261341f&title=&width=1232.6722293926775)
+![image.png](https://s2.loli.net/2024/09/27/a9XOB8GUkg4iwDl.png)
 可以看到使用了批处理以后，比逐条新增效率提高了10倍左右，性能还是不错的。
 
 不过，我们简单查看一下`MybatisPlus`源码：
@@ -634,12 +630,12 @@ spring:
 ```
 
 再次测试插入10万条数据，可以发现速度有非常明显的提升：
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/27967491/1688183132724-a20e7a12-396d-49b6-943b-3c26357a9b92.png#averageHue=%23f6f9f4&clientId=u9097aa82-6411-4&from=paste&height=273&id=ue336017d&originHeight=338&originWidth=1450&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=112189&status=done&style=none&taskId=ub2301dcf-ab09-4346-8378-f324485339d&title=&width=1169.7478616618994)
+![image.png](https://s2.loli.net/2024/09/27/vR5hF7PEDg4smrZ.png)
 
 在`ClientPreparedStatement`的`executeBatchInternal`中，有判断`rewriteBatchedStatements`值是否为true并重写SQL的功能：
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/27967491/1688194832130-aecf5c68-30f2-4925-862a-fdb15f4f4614.png#averageHue=%23f5f8f4&clientId=ucb5715c2-9b63-4&from=paste&height=515&id=u39f69fec&originHeight=639&originWidth=1509&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=157560&status=done&style=none&taskId=uc973871c-05ff-42b0-9e86-297efa8cf5d&title=&width=1217.3444987915905)
+![image.png](https://s2.loli.net/2024/09/27/cD4WBbzk9Xs1CRf.png)
 最终，SQL被重写了：
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/27967491/1688194899752-20700857-a5d3-4d14-bff0-6351fbf68a5b.png#averageHue=%23f4f4f3&clientId=ucb5715c2-9b63-4&from=paste&height=662&id=ub69cdd4a&originHeight=820&originWidth=1438&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=81949&status=done&style=none&taskId=u8db236a7-b1a5-4f0d-b1e9-6c8974cec1e&title=&width=1160.0671897033183)
+![image.png](https://s2.loli.net/2024/09/27/XFi86M3UpjGdIvn.png)
 
 > 总结:
 >
@@ -716,7 +712,6 @@ public List<User> queryUser(String username, Integer status, Integer minBalance,
 }
 ```
 
-
 基于Lambda更新：
 
 ```java
@@ -761,7 +756,7 @@ public void updateBalance(Long balance, Long id, String username){
 ### 4.4.静态工具
 
 有的时候Service之间也会相互调用，为了避免出现循环依赖问题，MybatisPlus提供一个静态工具类：`Db`，其中的一些静态方法与`IService`中方法签名基本一致，也可以帮助我们实现CRUD功能：
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/27967491/1688195216843-3b5850bb-92f9-4eb8-a41d-db93d9606e5d.png#averageHue=%23fbf9f8&clientId=ucb5715c2-9b63-4&from=paste&height=725&id=u51b23a1d&originHeight=899&originWidth=1028&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=107357&status=done&style=none&taskId=u2b03fdcc-1631-4557-a076-94311862860&title=&width=829.3108977851259)
+![image.png](https://s2.loli.net/2024/09/27/d3SvENtfpOsDrGb.png)
 
 示例：
 
@@ -796,11 +791,11 @@ void testDbUpdate() {
 
 1. 安装插件
 
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/27967491/1688091751297-6918cbf6-d2c2-4ae1-a88e-05b53deeb007.png#averageHue=%23f6f5f5&clientId=uea9a4aab-c071-4&from=paste&height=618&id=u6048bc70&originHeight=766&originWidth=1507&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=107031&status=done&style=none&taskId=u820e9b5e-098b-47f6-8ff5-fd30fe3b308&title=&width=1215.7310534651604)
+![image.png](https://s2.loli.net/2024/09/27/njOd2rI7hKbBRvc.png)
 
 2. 配置数据库
 
-![image.png](https://cdn.nlark.com/yuque/0/2023/png/27967491/1688196733527-e4bc1921-cc23-4f8c-92f9-b917ec261523.png#averageHue=%23d9ceb7&clientId=ucb5715c2-9b63-4&from=paste&height=190&id=u1be4369c&originHeight=236&originWidth=1221&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=37503&status=done&style=none&taskId=u6232584f-51f8-4184-8a55-86890ee8ade&title=&width=985.0083717856409)
+![image.png](https://s2.loli.net/2024/09/27/5VJDMPjly6dearT.png)
 
 ![image.png](https://cdn.nlark.com/yuque/0/2023/png/27967491/1688196793381-60acee0a-500e-4b4d-8b3b-aa4cd3af80c8.png#averageHue=%23f4f4f4&clientId=ucb5715c2-9b63-4&from=paste&height=317&id=u4cc24dc2&originHeight=393&originWidth=629&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=17584&status=done&style=none&taskId=ud0ec4100-04a0-443a-bc58-9a65002e9fe&title=&width=507.4285551622998)
 
@@ -827,12 +822,11 @@ void testDbUpdate() {
 
 ```sql
 alter table address
-	add deleted bit default b'0' null comment '逻辑删除';
+ add deleted bit default b'0' null comment '逻辑删除';
 ```
 
 然后给`Address`实体添加`deleted`字段：
 ![image.png](https://cdn.nlark.com/yuque/0/2023/png/27967491/1688202948723-552f1db1-84ad-4b78-99ee-28ac6f2f5159.png#averageHue=%23f6f8f3&clientId=ucb5715c2-9b63-4&from=paste&height=389&id=ua4217141&originHeight=482&originWidth=856&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=53297&status=done&style=none&taskId=u2aa3f980-e287-47b8-8b36-3ccbc249d3a&title=&width=690.5545997121282)
-
 
 接下来，我们要在`application.yml`中配置逻辑删除字段：
 
@@ -884,7 +878,6 @@ void testQuery() {
 因此，我不太推荐采用逻辑删除功能，如果数据不能删除，可以采用把数据迁移到其它表的办法。
 :::
 
-
 ### 5.3 通用枚举
 
 User类中有一个用户状态字段：
@@ -924,7 +917,6 @@ public enum UserStatus {
 然后把`User`类中的`status`字段改为`UserStatus` 类型：
 ![image.png](https://cdn.nlark.com/yuque/0/2023/png/27967491/1688207388430-424b3be8-4c08-4c31-aa73-7b41e271a760.png#averageHue=%23f6f7f2&clientId=ucdd19af3-b6b9-4&from=paste&height=340&id=ua014304a&originHeight=422&originWidth=714&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=47282&status=done&style=none&taskId=u2e238813-09bf-4ab7-8ddf-8c8f581014c&title=&width=575.9999815355836)
 
-
 要让`MybatisPlus`处理枚举与数据库类型自动转换，我们必须告诉`MybatisPlus`，枚举中的哪个字段的值作为数据库值。
 `MybatisPlus`提供了`@EnumValue`注解来标记枚举属性：
 ![image.png](https://cdn.nlark.com/yuque/0/2023/png/27967491/1688206653554-4bc9d7a3-3c39-4981-a8ba-6f06ba7df734.png#averageHue=%23f8fbf6&clientId=ucdd19af3-b6b9-4&from=paste&height=418&id=ua72da7b8&originHeight=518&originWidth=635&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=67892&status=done&style=none&taskId=ua1ac546f-70cf-4525-a941-afce46f09a2&title=&width=512.2688911415904)
@@ -951,7 +943,6 @@ void testService() {
 
 最终，查询出的`User`类的`status`字段会是枚举类型：
 ![image.png](https://cdn.nlark.com/yuque/0/2023/png/27967491/1688207514989-da3d683d-641b-4a05-8330-ec1818604dd4.png#averageHue=%23f7faf3&clientId=ucdd19af3-b6b9-4&from=paste&height=272&id=u5c65f589&originHeight=337&originWidth=758&originalType=binary&ratio=1.2395833730697632&rotation=0&showTitle=false&size=70020&status=done&style=none&taskId=ub88fd551-ea20-4385-9696-bc4800cc4d4&title=&width=611.4957787170481)
-
 
 ### 5.4 字段类型处理器
 
@@ -1087,6 +1078,7 @@ MybatisPlus提供了很多的插件功能，进一步拓展其功能。目前已
 - 多租户,动态表名
 - 分页,乐观锁
 - sql 性能规范,防止全表更新与删除
+
   :::
 
 这里我们以分页插件为里来学习插件的用法。
@@ -1209,7 +1201,6 @@ userService.page(page);
  |
 | 特殊说明 | •如果排序字段为空，默认按照更新时间排序
 •排序字段不为空，则按照排序字段排序 |
-
 
 这里需要定义3个实体：
 

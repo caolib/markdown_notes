@@ -5,10 +5,8 @@ tags:
   - mysql
   - mybatis
   - java
-categories:
-  - java
-cover: https://dogefs.s3.ladydaily.com/~/source/wallhaven/full/9d/wallhaven-9d9111.jpg?w=2560&h=1440&fmt=webp
-stick: 999
+categories: 后端
+cover: https://s2.loli.net/2024/06/09/ZuWeizVmJ3DNOgq.webp
 ---
 
 
@@ -233,9 +231,9 @@ public void test() throws IOException {
 }
 ```
 
-> 但是每次使用都要写这一串代码，==有点麻烦==，前面获取SqlSession对象的代码是固定代码，将这段固定代码提取到工具类`MybatisUtils`，使用工具类的静态方法获取SqlSession对象
+> 但是每次使用都要写这一串代码，**有点麻烦**，前面获取SqlSession对象的代码是固定代码，将这段固定代码提取到工具类`MybatisUtils`，使用工具类的静态方法获取SqlSession对象
 
-> ==MybatisUtils工具类示例==
+> **MybatisUtils工具类示例**
 
 ```java
 //sqlSessionFactory --> sqlSession

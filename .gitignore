@@ -5,3 +5,7 @@
 .\hello-word.md
 note/
 .\README.md
+*.cpp
+*.exe
+*.py
+.gitignore

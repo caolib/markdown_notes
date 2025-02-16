@@ -1,16 +1,12 @@
 ---
-title: SpringBoot相关配置
+title: springboot相关配置
 date: 2024-01-07 13:10:42
-categories: 
-    - spring
-    - java
+categories: 后端
 tags: 
-  - spring
-cover: https://dogefs.s3.ladydaily.com/~/source/wallhaven/full/5g/wallhaven-5gr5m7.jpg?w=2560&h=1440&fmt=webp
-stick: 955
+  - springboot
 ---
 
-# SpringBoot相关配置
+# springboot相关配置
 
 ## 1.[自定义项目LOGO](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.spring-application.banner)
 
@@ -44,59 +40,34 @@ public class WebMvcConfig implements WebMvcConfigurer {
 }
 ```
 
-## 3. application配置文件
+## 3. 自动重启
 
-`application.yml`
+使用dev-tools实现项目代码修改后自动重启，**相比于手动重启速度更快**
 
-```yaml
-server:
-  port: 8080
+- 导入依赖，刷新maven，然后重启项目
 
-spring:
-  profiles:
-    active: dev
-  main:
-    allow-circular-references: true
-  devtools:
-    restart:
-      enabled: true
-      # 设置重启的目录
-      additional-paths: src/main/java
-
-# mybatis-plus配置
-mybatis-plus:
-  configuration:
-    map-underscore-to-camel-case: true    #开启下划线自动转驼峰命名
-  type-aliases-package: com.clb.pojo  #别名扫描
-  mapper-locations: classpath:mapper/*.xml  #注册mapper
-  global-config:
-    banner: false
-    db-config:
-      id-type: auto
-
-logging:
-  level:
-    com.clb: debug
-  pattern:
-    dateformat: MM-dd HH:mm:ss.SSS
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-devtools</artifactId>
+    <scope>runtime</scope>
+    <optional>true</optional>
+</dependency>
 ```
 
-`application-dev.yml`
+- 在IDEA设置中打开高级设置，搜索编译，打开下图中选项
 
-```yaml
-spring:
-  config:
-    activate:
-      on-profile: dev
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/mybatis?rewriteBatchedStatements=true
-    username: root
-    password: 123456
-  data:
-    redis:
-      host: 192.168.0.88
-      password: 123456
-      port: 6379
-      database: 0
-```
+![image-20241231180541224](https://s2.loli.net/2024/12/31/4JTy5dRIasjcmuQ.png)
+
+- 在左侧打开**服务**工具窗口，右键项目启动类配置，选择**编辑所选配置**
+
+![image-20250108164756438](C:/Users/12655/AppData/Roaming/Typora/typora-user-images/image-20250108164756438.png)
+
+点击**修改选项**
+
+![image-20250108164858397](C:/Users/12655/AppData/Roaming/Typora/typora-user-images/image-20250108164858397.png)
+
+在 **切换出IDE时** 一项中选择 **更新类和资源**，这样只要光标焦点离开IDEA就会自动重新构建并启动项目，速度较快
+
+![image-20250108164933177](C:/Users/12655/AppData/Roaming/Typora/typora-user-images/image-20250108164933177.png)
+

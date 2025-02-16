@@ -6,13 +6,12 @@ categories:
   - vue
 tags:
   - pinia
-cover: https://dogefs.s3.ladydaily.com/~/source/wallhaven/full/l8/wallhaven-l82kpr.jpg?w=2560&h=1440&fmt=webp
-stick: 300
+cover: https://s2.loli.net/2024/12/30/kAezIathYTQs8cn.png
 ---
 
-## [Pinia](https://pinia.web3doc.top/)
+## [Pinia](https://pinia.vuejs.org/zh/)
 
-> [!note] 
+> [!note]
 >
 > Pinia是什么？
 >
@@ -20,7 +19,7 @@ stick: 300
 >
 > vue项目中有很多页面view，这些view之间相互独立，登录页面会拿到后端传回的token，但是其他页面并没有token，可以将token保存在`pinia`，其他页面都可以访问pinia(相当于全局变量)，另外pinia基于内存存储，刷新浏览器数据就会丢失，使用`persist`插件可以将数据==持久化==
 
-![](https://gitee.com/clibin/image-bed/raw/master/202402201151223.png)
+![](https://s2.loli.net/2024/09/27/dThzcYPij8eMZWb.png)
 
 ## 1.安装
 
@@ -193,3 +192,4 @@ export const useAdminStore = defineStore('admin', () => {
     }
 )
 ```
+
