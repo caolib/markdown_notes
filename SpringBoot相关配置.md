@@ -21,7 +21,7 @@ tags:
           ~_|___|__
 ```
 
-## 2. 跨域请求
+## 2.跨域请求
 
 添加此配置到`WebMvc`配置类中(推荐)，也可以在每个`Controller`类上添加注解`@CrossOrigin`
 
@@ -40,7 +40,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 }
 ```
 
-## 3. 自动重启
+## 3.自动重启
 
 使用dev-tools实现项目代码修改后自动重启，**相比于手动重启速度更快**
 

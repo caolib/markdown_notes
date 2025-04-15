@@ -91,8 +91,6 @@ ___粗斜体文本___
 
 我会使用[^markdown]
 
-[^markdown]:Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档
-
 ### 列表
 
 Markdown 支持有序列表和无序列表
@@ -482,6 +480,5 @@ $$
 
 ------
 
-[markdown]:https://markdown.com.cn/
-
-[home]:https://clb.pages.dev "我的博客主页"
+[^markdown]:https://markdown.com.cn/
+[^home]:https://clb.pages.dev "我的博客主页"

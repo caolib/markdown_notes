@@ -192,7 +192,6 @@ TODO
 
 
 
+[^sentinel]:https://sentinelguard.io/zh-cn
 
-
-[sentinel]:https://sentinelguard.io/zh-cn
-[sentinel-release]:https://github.com/alibaba/Sentinel/releases
+[^sentinel-release]:https://github.com/alibaba/Sentinel/releases

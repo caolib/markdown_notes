@@ -6,10 +6,11 @@ date: 2025-01-01 13:37:56
 categories:
   - springcloud
 cover: https://s2.loli.net/2025/01/01/8eLKDNqIJkwv6ph.webp
-
 ---
 
 # Gateway
+
+[toc]
 
 ## 1.概述
 
@@ -223,7 +224,7 @@ public class UserInfoInterceptor implements HandlerInterceptor {
 
 > [!warning]
 >
-> [!warning] 在mvc配置类中添加这个拦截器，此处的 `@ConditionalOnClass(DispatcherServlet.class)` 注解可以防止gateway项目导入这个配置，因为gateway中一般不允许mvc存在，所以自然就没有mvc的依赖，如果导入这个配置就会出错
+>  在mvc配置类中添加这个拦截器，此处的 `@ConditionalOnClass(DispatcherServlet.class)` 注解可以防止gateway项目导入这个配置，因为gateway中一般不允许mvc存在，所以自然就没有mvc的依赖，如果导入这个配置就会出错
 
 ```java
 @Configuration
@@ -236,3 +237,4 @@ public class MvcConfig implements WebMvcConfigurer {
     }
 }
 ```
+

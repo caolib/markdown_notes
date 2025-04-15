@@ -3,8 +3,8 @@ title: mysql
 date: 2023-07-28 21:21:26
 categories: 数据库
 tags: 
-  - mysql
   - 数据库
+  - mysql
 cover: https://s2.loli.net/2024/06/07/HiWVoEZNrKnb4va.webp
 ---
 
@@ -74,7 +74,7 @@ values (456, 'ikun', 21, '男'),
 (456, 'ikun', 21, '男');
 
 # 查看表
-select *from user;
+select * from user;
 
 # 修改 把name为ikun的name全部改为小黑子
 update user

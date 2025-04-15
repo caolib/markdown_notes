@@ -49,4 +49,4 @@ cover: https://s2.loli.net/2024/06/07/agix2nv7zhCYGJj.webp
 >
 > `1.txt content:123`
 
-更多用法见[voidtools](https://www.voidtools.com/zh-cn/)
+更多用法见 [voidtools](https://www.voidtools.com/zh-cn/)
