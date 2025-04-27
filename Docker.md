@@ -253,7 +253,7 @@ docker exec -it redis redis-cli 	# 进入运行redis的容器并打开redis-cli�
 
 ---
 
-### 4.数据卷
+### 3.数据卷
 
 #### 1.概述
 
@@ -312,6 +312,10 @@ docker run -d \
 >
 > 这样做有什么用？挂载到宿主机上的目录可以持久化，即使容器被删除了，只要重新创建一个容器，同样挂载这三个文件夹，这个新的容器就能立刻恢复为之前的mysql数据库的状态
 
+### 4.网络
 
+Docker部署的各个容器相互独立，容器之间不能直接相互访问，可以通过网络使其相互联系
+
+to be continued...
 
 [docker]:https://docs.docker.com/
